@@ -65,15 +65,7 @@ export default function WeatherGuidance({ setActiveTab }) {
     </div>
   );
 }
-  return (
-    <div className="max-w-4xl mx-auto py-12 text-center text-slate-500">
-      <h2 className="text-xl font-bold mb-2">Weather Data Unavailable</h2>
-      <p>Location: Kondapur Agricultural Region</p>
-      <p>Current: 29°C, Partly Cloudy</p>
-      <p>🔹 Showing default demo data.</p>
-    </div>
-  );
-}
+
 
 
 
