@@ -57,12 +57,22 @@ app.get('/api/health', (req, res) => {
 });
 
 // Serve compiled client assets if dist exists
-const clientDistPath = path.resolve(__dirname, '../client/dist');
+const clientDistPath = path.join(__dirname, '..', 'client', 'dist');
 app.use(express.static(clientDistPath));
 
-// SPA fallback
+// SPA fallback – serve index.html for any non‑API route
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(clientDistPath, 'index.html'));
+});
+
+
+
+
+
+
     return next();
   }
   res.sendFile(path.join(clientDistPath, 'index.html'));
