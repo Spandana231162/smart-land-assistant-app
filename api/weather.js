@@ -1,5 +1,5 @@
 // api/weather.js
-import { db } from '../../server/db.js';
+import { db } from '../server/db.js';
 
 export default function handler(req, res) {
   if (req.method !== 'GET') {
